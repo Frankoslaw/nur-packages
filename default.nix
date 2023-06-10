@@ -17,6 +17,7 @@
   example-package = pkgs.callPackage ./pkgs/example-package { };
   hello-nur = pkgs.callPackage ./pkgs/hello-nur {};
   ani-cli = pkgs.callPackage ./pkgs/ani-cli {};
+  wasi-sdk = pkgs.callPackage ./pkgs/wasi-sdk {};
   # some-qt5-package = pkgs.libsForQt5.callPackage ./pkgs/some-qt5-package { };
   # ...
 }
