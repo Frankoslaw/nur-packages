@@ -1,4 +1,5 @@
 { stdenv, 
+  fetchFromGitHub,
   lib,
   autoPatchelfHook,
   gcc,
@@ -8,10 +9,11 @@
 stdenv.mkDerivation rec {
   pname = "wasi-sdk";
   version = "20";
-
-  src = fetchTarball {
-    # TODO: Add parameters for darwin and version
-    url = "https://github.com/WebAssembly/wasi-sdk/releases/download/wasi-sdk-${version}/wasi-sdk-${version}.0-linux.tar.gz";
+  
+  src = fetchFromGitHub {
+    owner = "WebAssembly";
+    repo = "wasi-sdk";
+    rev = "wasi-sdk-${version}";
     sha256 = "1rjh19g1mcvaixyp3fs6d9bfa1nqv5b6s6v1nb24q7wbb75y9m8x";
   };
 
